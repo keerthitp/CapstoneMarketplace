@@ -1,6 +1,7 @@
 package com.company.Marketplace.DTO;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.validator.constraints.Length;
 
@@ -22,6 +23,7 @@ public class ProductCategory {
     private String productCategoryName;
 
     @OneToMany(mappedBy = "productCategory", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
     private Set<Product> products;
 
     public Integer getProductCategoryId() {

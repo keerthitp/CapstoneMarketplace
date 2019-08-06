@@ -9,16 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public class ProductService {
-
-    @Autowired
-    ProductCategoryRepository productCategoryRepo;
-
-    @Autowired
-    ProductRepository productRepo;
+public interface ProductService {
 
 
-    public List<Product> getAllProductsFromProductCategory(){
-        return null;
-    }
+     //List<ProductCategory> getAllProductCategories();
+     List<Product> getProductsByProductCategory(String productCategoryName);
+     List<Product> getProductByProductCategoryAboveRating4(String productCategoryName);
+     List<Product> sortProductsOnPrice(String sort);
+     List<Product> getAllProducts();
+     Product addProductToDatabase(Product product);
+
+
+
 }
+

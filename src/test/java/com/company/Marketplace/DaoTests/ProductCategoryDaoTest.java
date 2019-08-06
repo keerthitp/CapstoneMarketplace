@@ -1,4 +1,5 @@
-package com.company.Marketplace.DtoTests;
+package com.company.Marketplace.DaoTests;
+
 
 import com.company.Marketplace.DAO.ProductCategoryRepository;
 import com.company.Marketplace.DAO.ProductRepository;
@@ -20,7 +21,7 @@ import java.util.Set;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ProductCategoryTest {
+public class ProductCategoryDaoTest {
 
     ProductCategory productCategory1 , productCategory2, productCategory3;
     Product product1, product2, product3;
@@ -113,7 +114,7 @@ public class ProductCategoryTest {
         Assert.assertEquals(2, productCategoryRepo.findAll().size());
 
         Optional<ProductCategory> productCategoryTest = productCategoryRepo.findById(
-                                                    productCategory3.getProductCategoryId());
+                productCategory3.getProductCategoryId());
 
         Assert.assertFalse(productCategoryTest.isPresent());
 
